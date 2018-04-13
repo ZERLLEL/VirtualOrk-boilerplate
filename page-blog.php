@@ -63,8 +63,7 @@
          <li>
            <div class="bgGreen">
              <div>
-               <?php the_post_thumbnail('medium_large') ?>
-               <p>Publicado por awachipia loca</p>
+               <?php the_post_thumbnail('medium_large', array('class' => 'img-fluid')) ?>
              </div>
            </div>
 
@@ -74,15 +73,16 @@
                 <h2><?php the_title() ?></h2>
              </a>
              <?php the_content() ?>
-           </div>
 
-         </li>
 
          <?php } wp_reset_postdata();
          ?>
-         </ul>
-         <?php the_pagination( $get_arg ); ?>
 
+         <?php the_pagination( $get_arg ); ?>
+       </div>
+
+     </li>
+         </ul>
 
 
 <!-- noticia 3 -->

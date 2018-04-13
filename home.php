@@ -30,26 +30,26 @@
 
       <div class="jFlexaround">
 
-          <div class="bgGreen noti">
+				<?php
+				$args = array(
+				 'post_type' => 'news',
+				 'post_per_page' => 3
+				);
+				$get_args = new WP_Query( $args );
+				while ( $get_args->have_posts() ) {
+						$get_args->the_post();
+				?>
 
-            <div class="container notix">
-              <img src="<?php bloginfo('template_url') ?>/assets/img/notice/vr1in.jpg" alt="notice" class="img-fluid">
-            </div>
-          </div>
+				<div class="bgGreen noti">
+					<a href="<?php the_permalink() ?>" class="container notix">
+						<?php the_post_thumbnail('homenews', array('class' => 'img-fluid')) ?>
+					</a>
+					<?php the_title() ?>
+				</div>
 
+				<?php } wp_reset_postdata();
+				?>
 
-        <div class="bgGreen noti">
-          <div class="container notix">
-            <img src="<?php bloginfo('template_url') ?>/assets/img/notice/vr2in.jpg" alt="notice" class="img-fluid">
-          </div>
-        </div>
-
-
-        <div class="bgGreen noti">
-          <div class="container notix">
-            <img src="<?php bloginfo('template_url') ?>/assets/img/notice/vr3in.jpg" alt="notice" class="img-fluid">
-          </div>
-        </div>
       </div>
   </div>
   <div class="greenline"></div>

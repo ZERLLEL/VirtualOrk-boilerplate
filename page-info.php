@@ -172,5 +172,17 @@ sientelos todos. Experimenta todos.</p>
     </div>
   </div>
   </footer>
+  
+  <script>
+  var vid = document.getElementById("myVideo");
+
+  function playVid() {
+      vid.play();
+  }
+
+  function pauseVid() {
+      vid.pause();
+  }
+  </script>
 
 <?php get_footer() ?>
